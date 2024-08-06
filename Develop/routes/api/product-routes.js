@@ -110,7 +110,7 @@ router.put('/:id', async (req, res) => {
     }
 
     const updatedProduct = await Product.findByPk(req.params.id, {
-      include: [{ model: ProductTag }],
+      include: [{ model: Tag }],
     });
 
     res.status(200).json(updatedProduct);
